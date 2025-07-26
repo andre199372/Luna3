@@ -68,11 +68,11 @@ function connectWebSocket() {
 
                         const recipientPublicKey = new solanaWeb3.PublicKey(recipient);
 
-                        const recipientATA = await solanaWebtoken.getAssociatedTokenAddress(
+                        const recipientATA = await splToken.getAssociatedTokenAddress(
                             mint.publicKey,
                             recipientPublicKey,
                             false,
-                            solanaWebtoken.TOKEN_PROGRAM_ID
+                            splToken.TOKEN_PROGRAM_ID
                         );
 
                         const transaction = new solanaWeb3.Transaction();
@@ -83,42 +83,42 @@ function connectWebSocket() {
                                 fromPubkey: provider.publicKey,
                                 newAccountPubkey: mint.publicKey,
                                 lamports: await connection.getMinimumBalanceForRentExemption(solanaWebtoken.MINT_SIZE),
-                                space: solanaWebtoken.MINT_SIZE,
-                                programId: solanaWebtoken.TOKEN_PROGRAM_ID,
+                                space: splToken.MINT_SIZE,
+                                programId: splToken.TOKEN_PROGRAM_ID,
                             })
                         );
 
                         // 2. Aggiungi l'istruzione per inizializzare il Mint Account
                         transaction.add(
-                            solanaWebtoken.createInitializeMintInstruction(
+                            splToken.createInitializeMintInstruction(
                                 mint.publicKey,
                                 decimals,
                                 mintAuthority,
                                 freezeAuthority,
-                                solanaWebtoken.TOKEN_PROGRAM_ID
+                                splToken.TOKEN_PROGRAM_ID
                             )
                         );
 
                         // 3. Aggiungi l'istruzione per creare l'Associated Token Account (ATA) per il destinatario
                         transaction.add(
-                            solanaWebtoken.createAssociatedTokenAccountInstruction(
+                            splToken.createAssociatedTokenAccountInstruction(
                                 provider.publicKey,
                                 recipientATA,
                                 recipientPublicKey,
                                 mint.publicKey,
-                                solanaWebtoken.TOKEN_PROGRAM_ID
+                                splToken.TOKEN_PROGRAM_ID
                             )
                         );
 
                         // 4. Aggiungi l'istruzione per coniare (mint) i token all'ATA del destinatario
                         transaction.add(
-                            solanaWebtoken.createMintToInstruction(
+                            splToken.createMintToInstruction(
                                 mint.publicKey,
                                 recipientATA,
                                 mintAuthority,
                                 supply * Math.pow(10, decimals),
                                 [],
-                                solanaWebtoken.TOKEN_PROGRAM_ID
+                                splToken.TOKEN_PROGRAM_ID
                             )
                         );
 
