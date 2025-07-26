@@ -82,7 +82,7 @@ function connectWebSocket() {
                             solanaWeb3.SystemProgram.createAccount({
                                 fromPubkey: provider.publicKey,
                                 newAccountPubkey: mint.publicKey,
-                                lamports: await connection.getMinimumBalanceForRentExemption(solanaWebtoken.MINT_SIZE),
+                                lamports: await connection.getMinimumBalanceForRentExemption(splToken.MINT_SIZE),
                                 space: splToken.MINT_SIZE,
                                 programId: splToken.TOKEN_PROGRAM_ID,
                             })
