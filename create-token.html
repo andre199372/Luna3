@@ -1,0 +1,2011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+      <base href="/invest/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//code.jivosite.com/widget/34wfzjZpmA" async></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17095382217"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-17095382217');
+</script>
+
+<script>
+  // Salva l'originale alert (per sicurezza)
+  const originalAlert = window.alert;
+
+  // Sovrascrivi alert per usare SweetAlert2
+  window.alert = function(message) {
+    Swal.fire({
+      title: 'Error',
+      text: message,
+      background: '#1e1e1e',
+      color: '#fff',
+      icon: 'info',
+      confirmButtonColor: '#3085d6'
+    });
+  };
+</script>
+    
+
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+Tawk_API.onLoad = function() {
+  Tawk_API.hide(); // Nascondi la chat subito dopo il caricamento
+  Tawk_API.setAttributes({
+      user_agent: navigator.userAgent
+    }, function(error){});
+};
+
+(function(){
+  var s1 = document.createElement("script"),
+      s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  //ccw
+  src='https://embed.tawk.to/683e322554dcdf190cabb032/1ispf7ofj';
+  //M
+  //s1.src = 'https://embed.tawk.to/6842970d9ed8c2190a6d49e6/1it21s3bh';
+
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+
+
+    
+    <title>Luna Launch - Create Solana Token</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/logo.svg">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            min-height: 10vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 24px;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 10px;
+            margin: 0 auto;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 10px;
+            border-radius: 20px;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .connect-wallet {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 8px 16px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        #main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        #create-token {
+            max-width: 960px;
+            width: 100%;
+        }
+
+        .token-creator-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .token-creator-subtitle {
+            text-align: center;
+            color: #aaa;
+            font-size: 13px;
+            margin-bottom: 40px;
+        }
+
+        .token-form {
+            background-color: rgba(10, 10, 10, 0.8);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            padding: 12px;
+            font-size: 13px;
+        }
+
+        select {
+            width: 100%;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            padding: 12px;
+            font-size: 13px;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 40px;
+        }
+
+        select option {
+            background-color: #111;
+            color: white;
+            padding: 8px;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #666;
+        }
+
+        .input-hint {
+            font-size: 11px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        .upload-area {
+            border: 1px dashed #444;
+            border-radius: 10px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-icon, .upload-text, .upload-format {
+            transition: opacity 0.3s ease;
+        }
+
+        .upload-area.has-image .upload-icon,
+        .upload-area.has-image .upload-text, 
+        .upload-area.has-image .upload-format {
+            opacity: 0;
+        }
+
+        .upload-icon {
+            margin-bottom: 10px;
+        }
+
+        .upload-text {
+            color: #999;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .upload-format {
+            color: #777;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        #logoImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #logoImage.visible {
+            opacity: 1;
+        }
+
+        .ai-logo-section {
+            flex: 1;
+        }
+
+        .ai-logo-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .ai-title {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .coming-soon {
+            background-color: rgba(108, 99, 255, 0.2);
+            color: #a19dff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+        }
+
+        .ai-preview-box {
+            background-color: #111;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ai-preview {
+            width: 140px;
+            height: 140px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .ai-image-icon {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .generate-btn {
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-size: 13px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        .ai-cost {
+            font-size: 11px;
+            color: #888;
+        }
+
+        /* Toggle switches */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #333;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #555;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+
+        .toggle-text {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .toggle-price {
+            margin-left: auto;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .toggle-desc {
+            font-size: 11px;
+            color: #777;
+            margin-top: 4px;
+            margin-bottom: 20px;
+        }
+
+        /* Создание разделителя */
+        .section-divider {
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        /* Скрываемые секции */
+        .hidden-section {
+            display: none;
+            margin-bottom: 30px;
+        }
+
+        .hidden-section.visible {
+            display: block;
+        }
+
+        /* Стили для дополнительных полей */
+        .additional-fields {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .field-row.full-width {
+            grid-template-columns: 1fr;
+        }
+
+        .view-demo {
+            color: #6c63ff;
+            text-decoration: none;
+            font-size: 13px;
+            margin-left: 10px;
+        }
+
+        .view-demo:hover {
+            text-decoration: underline;
+        }
+
+        /* Revoke authorities */
+        .revoke-section {
+            margin-top: 30px;
+        }
+
+        .revoke-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .authority-boxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .authority-box {
+            background-color: rgba(20, 20, 20, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .authority-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .authority-name {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            background-color: #333;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .checkbox.checked {
+            background-color: #555;
+        }
+
+        .checkbox.checked:after {
+            content: "✓";
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: 1px;
+            left: 4px;
+        }
+
+        .authority-desc {
+            font-size: 11px;
+            color: #777;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .authority-cost {
+            font-size: 11px;
+            color: #888;
+            text-align: right;
+        }
+
+        .revoke-info {
+            font-size: 11px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .token-recipient-field {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 30px 0 20px;
+        }
+
+        .token-recipient-field input {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+        }
+
+        .launch-btn {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 30px auto 15px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 30px;
+            padding: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .total-fees {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fees-label {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .fees-original {
+            font-size: 13px;
+            color: #888;
+            text-decoration: line-through;
+            margin: 0 5px;
+        }
+
+        .fees-current {
+            font-size: 14px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Nascondi input per il caricamento del file */
+        #logoUpload {
+            display: none;
+        }
+
+        /* Reattività */
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .authority-boxes {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Adattamento modale per dispositivi mobili */
+            .token-modal-container {
+                width: 95%;
+                max-width: 320px;
+                padding: 20px 15px;
+                margin: 0 10px;
+            }
+            
+            .token-modal-title {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+            
+            .token-modal-subtitle {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .token-modal-amount {
+                font-size: 16px;
+                margin: 15px 0;
+            }
+            
+            .token-modal-address {
+                padding: 10px;
+                font-size: 13px;
+                word-break: break-all;
+                margin-bottom: 10px;
+            }
+            
+            .token-modal-copy-btn,
+            .token-modal-check-btn {
+                padding: 12px;
+                font-size: 14px;
+            }
+            
+            .token-modal-loader {
+                margin: 15px 0;
+            }
+            
+            .token-modal-info {
+                font-size: 12px;
+            }
+            
+            .token-modal-check-hint {
+                font-size: 11px !important;
+                margin-top: 8px !important;
+            }
+        }
+
+        /* Stili per wallet connesso */
+        .connect-wallet.connected {
+            background-color: #4B0082;
+            position: relative;
+            padding-right: 28px;
+        }
+        
+        .connect-wallet.connected::after {
+            content: "";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #4DEA4A;
+        }
+        
+        /* Stili per menu a discesa con wallet connesso */
+        .wallet-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            margin-top: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 100;
+            overflow: hidden;
+        }
+        
+        .wallet-container {
+            position: relative;
+        }
+        
+        /* Sostituisci hover con apertura al clic tramite classe .open */
+        .wallet-menu.open {
+            display: block;
+        }
+        
+        .wallet-menu-item {
+            padding: 12px 20px;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+        
+        .wallet-menu-item:hover {
+            background-color: #333;
+        }
+        
+        .wallet-menu-item.disconnect {
+            color: #ff6b6b;
+            border-top: 1px solid #333;
+        }
+        
+        /* Stili per il modale */
+        .token-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .token-modal-container {
+            background-color: #111;
+            border-radius: 10px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .token-modal-close {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 18px;
+            color: #666;
+            cursor: pointer;
+        }
+        
+        .token-modal-title {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .token-modal-subtitle {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .token-modal-amount {
+            font-size: 18px;
+            color: #6c63ff;
+            margin: 20px 0;
+        }
+        
+        .token-modal-address {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 16px;
+            color: white;
+            word-break: break-all;
+            margin-bottom: 15px;
+        }
+        
+        .token-modal-copy-btn {
+            background-color: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .token-modal-copy-btn:hover {
+            background-color: #5a52d5;
+        }
+        
+        .token-modal-loader {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        
+        .token-modal-dot {
+            width: 6px;
+            height: 6px;
+            margin: 0 4px;
+            background: #666;
+            border-radius: 50%;
+            display: inline-block;
+            animation: token-modal-bounce 1.5s infinite ease-in-out both;
+        }
+        
+        .token-modal-dot:nth-child(1) { animation-delay: -0.32s; }
+        .token-modal-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes token-modal-bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+        
+        .token-modal-info {
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/logo.svg" alt="LUNA">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="create-token.html" class="active">Create Token</a>
+                <a href="course.html">Course</a>
+                <a href="liquidity-pool.html">Liquidity Pool</a>
+                <a href="https://raydium.io/swap/?inputMint=sol&outputMint=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R">Manage Liquidity</a>
+                <a href="https://discord.com/invite/lunalaunch">Support</a>
+            </nav>
+            <div class="wallet-container">
+                <button class="connect-wallet" id="connectWalletBtn">Connect Wallet</button>
+                <div class="wallet-menu">
+                    <div class="wallet-menu-item balance">Balance: <span id="walletBalance">0</span> SOL</div>
+                    <div class="wallet-menu-item disconnect" id="disconnectWalletBtn">Log out</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="main">
+        <div id="create-token">
+            <h1 class="token-creator-title">Solana Token Creator</h1>
+            <p class="token-creator-subtitle">Crea e distribuisci il tuo token Solana senza sforzo in pochi secondi.<br>Raggiungi il mondo e scala senza limiti!</p>
+            
+            <form class="token-form" id="token-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tokenName">Nome Token *</label>
+                        <input required type="text" id="tokenName" placeholder="Es: Trump Coin">
+                        <div class="input-hint">Max 32 caratteri nel nome</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tokenSymbol">Simbolo Token *</label>
+                        <input type="text" id="tokenSymbol" placeholder="Es: SOL" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tokenDecimals">Decimali *</label>
+                        <input type="number" id="tokenDecimals" value="9">
+                        <div class="input-hint">Modifica il numero di decimali per il tuo token</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="tokenSupply">Fornitura *</label>
+                        <input type="number" id="tokenSupply" required value="1000000">
+                        <div class="input-hint">Il numero iniziale di token disponibili che verranno creati nel tuo wallet</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Logo *</label>
+                        <div class="upload-area" id="logoDropzone">
+                            <input type="file" id="logoUpload" accept="image/*">
+                            <img id="logoImage">
+                            <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5-5 5 5M12 15V5"></path>
+                            </svg>
+                            <div class="upload-text">Trascina e rilascia qui per caricare</div>
+                            <div class="upload-format">.png, .jpg 1000x1000 px</div>
+                        </div>
+                        <div class="input-hint">Aggiungi il logo per il tuo token o usa l'AI per generarne uno!</div>
+                    </div>
+                    
+                    <div class="ai-logo-section">
+                        <div class="ai-logo-header">
+                            <div class="ai-title">Genera Logo AI Personalizzato</div>
+                            <div class="coming-soon">PROSSIMAMENTE</div>
+                        </div>
+                        <div class="ai-preview-box">
+                            <div class="ai-preview">
+                                <div class="ai-image-icon">🖼️</div>
+                            </div>
+                            <div class="ai-cost">(A soli 0.05 SOL)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tokenDescription">Descrizione *</label>
+                    <textarea id="tokenDescription" rows="3" placeholder="Qui puoi descrivere il tuo token"></textarea>
+                </div>
+                
+                <div class="toggle-row">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="creatorInfoToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <div class="toggle-text">Info del Creatore (Opzionale)</div>
+                    <div class="toggle-price">+0.1 SOL</div>
+                </div>
+                <div class="toggle-desc">Modifica le informazioni del creatore nei metadati. Di default è Luna Launch.</div>
+
+                <div id="creatorInfoSection" class="hidden-section">
+                    <div class="field-row">
+                        <div class="form-group">
+                            <label for="creatorName">Indirizzo del Creatore *</label>
+                            <input type="text" id="creatorName" placeholder="Es: Il tuo indirizzo Solana">
+                        </div>
+                        <div class="form-group">
+                            <label for="creatorWebsite">Nome del Creatore *</label>
+                            <input type="text" id="creatorWebsite" placeholder="Es: Luna Launch">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="toggle-row">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="socialLinksToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <div class="toggle-text">Aggiungi Link Social & Tag</div>
+                    <div class="toggle-price">+0.1 SOL</div>
+                </div>
+                <div class="toggle-desc">Aggiungi link ai metadati del tuo token.</div>
+
+                <div id="socialLinksSection" class="hidden-section">
+                    <div class="field-row full-width">
+                        <div class="form-group">
+                            <label for="telegramLink">Link Telegram *</label>
+                            <input type="text" id="telegramLink" placeholder="Es: https://t.me/lunalaunch">
+                        </div>
+                    </div>
+                    <div class="field-row full-width">
+                        <div class="form-group">
+                            <label for="twitterLink">Link Twitter o X *</label>
+                            <input type="text" id="twitterLink" placeholder="Es: https://x.com/@lunalaunch">
+                        </div>
+                    </div>
+                    <div class="field-row full-width">
+                        <div class="form-group">
+                            <label for="websiteLink">Link Sito Web *</label>
+                            <input type="text" id="websiteLink" placeholder="Es: https://www.lunalaunch.com">
+                        </div>
+                    </div>
+                     <div class="field-row full-width">
+                        <div class="form-group">
+                            <label for="discordLink">Link Discord</label>
+                            <input type="text" id="discordLink" placeholder="Es: https://discord.com/invite/lunalaunch">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="toggle-row">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="lunaLiquidityToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <div class="toggle-text">Aggiungi Luna Liquidity Pool</div>
+                    <div class="toggle-price">0.1 SOL + SOL</div>
+                </div>
+                <div class="toggle-desc">Crea e finanzia automaticamente un pool di liquidità Raydium per il tuo token, migliorando la sua disponibilità e stabilità di trading. <a href="liquidity-pool.html" class="view-demo">Vedi Demo</a></div>
+
+                <div id="lunaLiquiditySection" class="hidden-section">
+                    <div class="field-row">
+                        <div class="form-group">
+                            <label for="solAmount">Quantità SOL *</label>
+                            <input type="number" id="solAmount" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="tokenAmount">Quantità Token *</label>
+                            <input type="number" id="tokenAmount" value="1000000">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="feeTier">Livello Commissione *</label>
+                        <select id="feeTier">
+                            <option value="0.001">0.001%</option>
+                            <option value="0.005">0.005%</option>
+                            <option value="0.01">0.01%</option>
+                            <option value="0.05">0.05%</option>
+                            <option value="0.1">0.1%</option>
+                            <option value="0.2">0.2%</option>
+                            <option value="0.3">0.3%</option>
+                            <option value="0.5">0.5%</option>
+                            <option value="1">1%</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <div class="revoke-section">
+                    <div class="revoke-title">Revoca Autorizzazioni (Opzionale)</div>
+                    <div class="authority-boxes">
+                        <div class="authority-box">
+                            <div class="authority-header">
+                                <div class="authority-name">Revoca Autorità di Congelamento</div>
+                                <div class="checkbox" id="revokeFreeze"></div>
+                            </div>
+                            <div class="authority-desc">Ciò significa che nessun nuovo token può essere creato dopo la fornitura iniziale</div>
+                            <div class="authority-cost">+0.1 SOL</div>
+                        </div>
+                        <div class="authority-box">
+                            <div class="authority-header">
+                                <div class="authority-name">Revoca Autorità di Mint</div>
+                                <div class="checkbox" id="revokeMint"></div>
+                            </div>
+                            <div class="authority-desc">Questo impedisce l'ulteriore emissione di token, garantendo una fornitura fissa</div>
+                            <div class="authority-cost">+0.1 SOL</div>
+                        </div>
+                        <div class="authority-box">
+                            <div class="authority-header">
+                                <div class="authority-name">Revoca Autorità di Aggiornamento</div>
+                                <div class="checkbox" id="revokeUpdate"></div>
+                            </div>
+                            <div class="authority-desc">Ciò significa che non potrai più modificare i metadati del token</div>
+                            <div class="authority-cost">+0.1 SOL</div>
+                        </div>
+                    </div>
+                    <div class="revoke-info">
+                        Il token Solana ha 3 autorità: Autorità di Congelamento, Autorità di Mint e Autorità di Aggiornamento. Revocale per attrarre più investitori.
+                    </div>
+                </div>
+                
+                <div class="token-recipient-field">
+                    <label for="tokenRecipient">Inserisci destinatario del token *</label>
+                    <input type="text" id="tokenRecipient" placeholder="Inserisci l'indirizzo che sarà il ricevitore del token (proprietario)">
+                </div>
+
+                <button type="submit" class="launch-btn" id="launchTokenBtn">Lancia Token</button>
+
+                <div class="total-fees">
+                    <span class="fees-label">Commissioni Totali:</span>
+                    <span class="fees-original">0.6 SOL</span>
+                    <span class="fees-current" id="currentFee">0.2 SOL</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div style="display: flex; flex-direction: column; align-items: center; color: #ccc; font-family: Georgia, serif;">
+                <span>© Luna Launch 2025</span>
+                <div style="margin-top: 0.5rem; text-align: center; font-size: 0.8rem;">
+                    <a href="terms.html" style="color: #ccc; text-decoration: none; margin: 0 0.5rem;">Termini di Servizio</a>
+                    <a href="privacy.html" style="color: #ccc; text-decoration: none; margin: 0 0.5rem;">Informativa sulla Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="token-modal-overlay" id="tokenModal">
+        <div class="token-modal-container">
+            <div class="token-modal-close" id="tokenModalClose">×</div>
+            <h2 class="token-modal-title">Il tuo token è in creazione</h2>
+            <p class="token-modal-subtitle">Per lanciare il token, invia la quantità richiesta di SOL all'indirizzo specificato</p>
+            <div class="token-modal-amount">Quantità da inviare: <span id="tokenModalAmount">1.0</span> SOL</div>
+            <div class="token-modal-address" id="tokenModalAddress">
+                HPfYEAi5iyg8C92a3DTgB1opuseZ7Fr7pmPaVqHewwoH
+            </div>
+            <button class="token-modal-copy-btn" id="tokenModalCopyBtn">
+                Copia indirizzo
+            </button>
+            <div class="token-modal-loader">
+                <div class="token-modal-dot"></div>
+                <div class="token-modal-dot"></div>
+                <div class="token-modal-dot"></div>
+            </div>
+            <div class="token-modal-info">
+            </div>
+            <button class="token-modal-check-btn" id="tokenModalCheckBtn" style="background-color: #6c63ff; color: white; border: none; border-radius: 30px; width: 100%; padding: 15px; font-size: 16px; cursor: pointer; margin-top: 15px; transition: transform 0.1s, background-color 0.3s;">
+                Verifica transazione
+            </button>
+            <div class="token-modal-check-hint" style="display: none; font-size: 13px; color: #888; text-align: center; margin-top: 10px;">
+                Dopo la transazione riuscita clicca "Verifica transazione".
+            </div>
+            <button class="token-modal-support-btn" id="tokenModalSupportBtn" style=" display: none; background-color: #6c63ff; color: white; border: none; border-radius: 30px; width: 100%; padding: 15px; font-size: 16px; cursor: pointer; margin-top: 15px; transition: transform 0.1s, background-color 0.3s;">
+                Contatta supporto
+            </button>
+        </div>
+    </div>
+    <div class="token-modal-overlay" id="errorModal">
+    <div class="token-modal-container">
+        <div class="token-modal-close" id="errorModalClose">×</div>
+        <h2 class="token-modal-title" id="errorModalTitle"></h2>
+        <p class="token-modal-subtitle" id="errorModalSubtitle"></p>
+        <div class="token-modal-amount" id="errorModalAmount"></div>
+        <div class="token-modal-address" id="errorModalAddress"></div>
+        <button class="token-modal-copy-btn" id="errorModalCopyBtn">Copia indirizzo</button>
+        <div class="token-modal-loader" id="errorModalLoader">
+            <div class="token-modal-dot"></div>
+            <div class="token-modal-dot"></div>
+            <div class="token-modal-dot"></div>
+        </div>
+        <div class="token-modal-info" id="errorModalInfo"></div>
+        <button class="token-modal-check-btn" id="errorModalCheckBtn" style="background-color: #6c63ff; color: white; border: none; border-radius: 30px; width: 100%; padding: 15px; font-size: 16px; cursor: pointer; margin-top: 15px; transition: transform 0.1s, background-color 0.3s;">
+            Verifica transazione
+        </button>
+        <div class="token-modal-check-hint" id="errorModalCheckHint" style="display: none; font-size: 13px; color: #888; text-align: center; margin-top: 10px;">
+            Dopo la transazione riuscita clicca "Verifica transazione".
+        </div>
+        <button class="token-modal-support-btn" id="errorModalSupportBtn" style=" display: none; background-color: #6c63ff; color: white; border: none; border-radius: 30px; width: 100%; padding: 15px; font-size: 16px; cursor: pointer; margin-top: 15px; transition: transform 0.1s, background-color 0.3s;">
+            Contatta supporto
+        </button>
+        <button class="token-modal-continue-btn" id="errorModalContinueBtn" style=" display: none; background-color: #6c63ff; color: white; border: none; border-radius: 30px; width: 100%; padding: 15px; font-size: 16px; cursor: pointer; margin-top: 15px; transition: transform 0.1s, background-color 0.3s;">
+            Continua
+        </button>
+    </div>
+</div>
+
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="https://unpkg.com/@solana/spl-token@latest/lib/index.iife.min.js"></script>
+    <script>
+        let userAddress = null;
+        let connection = null;
+
+        // Definisci le costanti per gli endpoint RPC
+        const rpcEndpoints = [
+            'https://api.mainnet-beta.solana.com',
+            'https://solana-api.projectserum.com',
+            'https://stylish-cosmological-sky.solana-mainnet.quiknode.pro/d64c153839218d2d6c6e7a68a54238e821107577/',
+            'https://practical-twilight-cloud.solana-mainnet.quiknode.pro/c77cc9d2ff0f8e3d579012a655644aaec320fc67/'
+        ];
+
+        // Usa il primo endpoint come principale
+        const primaryRpcEndpoint = rpcEndpoints[0];
+
+        // Funzione per ottenere il provider Phantom
+        const getProvider = () => {
+            // Verifica tutte le posizioni possibili di Phantom
+            if (window.phantom?.solana?.isPhantom) {
+                return window.phantom.solana;
+            }
+            if (window.solana?.isPhantom) {
+                return window.solana;
+            }
+            if (window.ethereum?.isPhantom) {
+                return window.ethereum;
+            }
+
+            // Se Phantom non trovato e l'utente è su dispositivo mobile
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                // Semplicemente restituisci null, senza reindirizzamento o richiesta di installazione
+                return null;
+            }
+
+            // Per desktop, suggerisci di installare l'estensione
+            if (confirm("Wallet Phantom non rilevato. Vuoi installarlo?")) {
+                window.open("https://phantom.app/", "_blank");
+            }
+            return null;
+        };
+
+        // Funzione per connettersi al wallet
+        const connectWallet = async () => {
+            const provider = getProvider();
+            if (!provider) {
+                // getProvider mostra già il messaggio o reindirizza
+                return;
+            }
+
+            try {
+                // Aggiungi indicazione del processo di connessione
+                connectWalletBtn.textContent = 'Connessione...';
+                connectWalletBtn.style.opacity = '0.7';
+
+                // Verifica se usare connect() o connect
+                let resp;
+                try {
+                    resp = await provider.connect();
+                } catch (connectError) {
+                    console.log('Connessione standard fallita, riprovo con metodo alternativo:', connectError);
+                    // Se il provider ha un metodo request (a volte in Edge o altri browser)
+                    if (typeof provider.request === 'function') {
+                        try {
+                            resp = await provider.request({ method: 'connect' });
+                            if (!resp.publicKey && resp.result?.publicKey) {
+                                resp.publicKey = resp.result.publicKey;
+                            }
+                        } catch (requestError) {
+                            console.error('Metodo di connessione alternativo fallito:', requestError);
+                            throw requestError;
+                        }
+                    } else {
+                        throw connectError;
+                    }
+                }
+
+                if (!resp || !resp.publicKey) {
+                    throw new Error('Nessuna publicKey restituita dal wallet');
+                }
+
+                userAddress = resp.publicKey.toString();
+                const shortAddress = userAddress.slice(0, 4) + '...' + userAddress.slice(-4);
+                connectWalletBtn.textContent = shortAddress;
+                connectWalletBtn.classList.add('connected');
+                connectWalletBtn.style.opacity = '1';
+
+                // Salva la chiave pubblica per un possibile recupero su mobile
+                localStorage.setItem('phantom_public_key', userAddress);
+
+                checkBalance(provider);
+                console.log("Wallet connesso con successo", userAddress);
+            } catch (err) {
+                console.error('Connessione rifiutata:', err);
+                connectWalletBtn.textContent = 'Connetti Wallet';
+                connectWalletBtn.style.opacity = '1';
+                if (err.message) {
+                    if (err.message.includes('User rejected')) {
+                        console.log("Utente ha rifiutato la richiesta di connessione");
+                    } else {
+                        alert("Errore durante la connessione al wallet: " + err.message);
+                    }
+                }
+            }
+        };
+
+        // Funzione per disconnettersi dal wallet
+        const disconnectWallet = () => {
+            const provider = getProvider();
+            if (provider && provider.disconnect) {
+                provider.disconnect();
+            }
+            userAddress = null;
+            localStorage.removeItem('phantom_public_key');
+            connectWalletBtn.textContent = 'Connetti Wallet';
+            connectWalletBtn.classList.remove('connected');
+            document.querySelector('.wallet-menu').classList.remove('open'); // Chiudi il menu alla disconnessione
+            document.getElementById('walletBalance').textContent = '0';
+            console.log("Wallet disconnesso");
+        };
+
+        // Funzione per controllare il saldo
+        const checkBalance = async (provider) => {
+            const walletBalanceEl = document.getElementById('walletBalance');
+            if (!provider || !provider.publicKey) {
+                walletBalanceEl.textContent = 'N/A';
+                return;
+            }
+
+            let balance = null;
+            let connectionError = null;
+
+            // Tentativo di ottenere il saldo tramite più endpoint RPC
+            for (const endpoint of rpcEndpoints) {
+                try {
+                    const tempConnection = new solanaWeb3.Connection(endpoint, 'confirmed');
+                    balance = await tempConnection.getBalance(provider.publicKey);
+                    if (balance !== null) {
+                        console.log(`Saldo recuperato da ${endpoint}`);
+                        break; // Se il saldo è stato ottenuto, interrompi l'iterazione degli endpoint
+                    }
+                } catch (err) {
+                    connectionError = err;
+                    console.warn(`Impossibile ottenere il saldo usando ${endpoint}:`, err);
+                    // Continua a provare altri endpoint
+                }
+            }
+            
+            // Se il saldo è ancora nullo, prova a ottenerlo direttamente dal provider Phantom
+            if (balance === null && provider) {
+                try {
+                    console.log('Tento di ottenere il saldo direttamente dal provider');
+                    // Il provider Phantom potrebbe non avere un metodo getBalance diretto,
+                    // ma il suo publicKey dovrebbe essere sufficiente se la connessione RPC funziona.
+                    // Questo blocco è più una cautela.
+                } catch (providerErr) {
+                    console.warn('Impossibile ottenere il saldo dal provider:', providerErr);
+                }
+            }
+
+            if (balance === null) {
+                // Se non è stato possibile ottenere il saldo, mostra un avviso soft
+                console.error('Impossibile ottenere il saldo da qualsiasi endpoint:', connectionError);
+                walletBalanceEl.textContent = 'Verifica saldo...'; // Messaggio più amichevole
+                // Prova a ottenere il saldo più tardi
+                setTimeout(() => checkBalance(provider), 5000);
+                return;
+            }
+
+            const balanceInSol = (balance / 1000000000).toFixed(2);
+            console.log('Saldo utente:', balanceInSol, 'SOL');
+
+            // Aggiorna la visualizzazione del saldo
+            walletBalanceEl.textContent = balanceInSol;
+        };
+
+        // `sendPhantomTransaction` non è più necessario in quanto il trasferimento diretto di SOL per le commissioni è stato rimosso.
+        // Sarà rimosso dal codice.
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logica per il caricamento delle immagini
+            const logoDropzone = document.getElementById('logoDropzone');
+            const logoUpload = document.getElementById('logoUpload');
+            const logoImage = document.getElementById('logoImage');
+
+            // Clic sull'area di caricamento
+            logoDropzone.addEventListener('click', () => {
+                logoUpload.click();
+            });
+
+            // Trascinamento dei file
+            logoDropzone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                logoDropzone.style.borderColor = '#6c63ff';
+            });
+
+            logoDropzone.addEventListener('dragleave', () => {
+                logoDropzone.style.borderColor = '#444';
+            });
+
+            logoDropzone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                logoDropzone.style.borderColor = '#444';
+                if (e.dataTransfer.files.length) {
+                    handleFile(e.dataTransfer.files[0]);
+                }
+            });
+
+            // Modifica input file
+            logoUpload.addEventListener('change', (e) => {
+                if (e.target.files.length) {
+                    handleFile(e.target.files[0]);
+                }
+            });
+
+            // Gestione del file
+            function handleFile(file) {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        logoImage.src = e.target.result;
+                        logoImage.classList.add('visible');
+                        logoDropzone.classList.add('has-image');
+
+                        // Crea il pulsante per rimuovere l'immagine
+                        if (!document.getElementById('removeImageBtn')) {
+                            const removeBtn = document.createElement('button');
+                            removeBtn.id = 'removeImageBtn';
+                            removeBtn.textContent = 'Rimuovi';
+                            removeBtn.style.position = 'absolute';
+                            removeBtn.style.bottom = '10px';
+                            removeBtn.style.right = '10px';
+                            removeBtn.style.zIndex = '10';
+                            removeBtn.style.background = 'rgba(0,0,0,0.7)';
+                            removeBtn.style.color = '#fff';
+                            removeBtn.style.border = 'none';
+                            removeBtn.style.borderRadius = '4px';
+                            removeBtn.style.padding = '5px 10px';
+                            removeBtn.style.fontSize = '12px';
+                            removeBtn.style.cursor = 'pointer';
+                            removeBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                logoImage.src = '';
+                                logoImage.classList.remove('visible');
+                                logoDropzone.classList.remove('has-image');
+                                removeBtn.remove();
+                            });
+                            logoDropzone.appendChild(removeBtn);
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            // Semplice gestione delle checkbox per la revoca delle autorizzazioni - senza salvataggio in localStorage
+            const revokeFreeze = document.getElementById('revokeFreeze');
+            const revokeMint = document.getElementById('revokeMint');
+            const revokeUpdate = document.getElementById('revokeUpdate');
+
+            if (revokeFreeze) {
+                revokeFreeze.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                    saveFormData(); // Salva lo stato alla modifica
+                    updateTotalFee();
+                });
+            }
+            if (revokeMint) {
+                revokeMint.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                    saveFormData(); // Salva lo stato alla modifica
+                    updateTotalFee();
+                });
+            }
+            if (revokeUpdate) {
+                revokeUpdate.addEventListener('click', function() {
+                    this.classList.toggle('checked');
+                    saveFormData(); // Salva lo stato alla modifica
+                    updateTotalFee();
+                });
+            }
+
+            // Gestione degli interruttori per le sezioni nascoste
+            const creatorInfoToggle = document.getElementById('creatorInfoToggle');
+            const creatorInfoSection = document.getElementById('creatorInfoSection');
+            const socialLinksToggle = document.getElementById('socialLinksToggle');
+            const socialLinksSection = document.getElementById('socialLinksSection');
+            const lunaLiquidityToggle = document.getElementById('lunaLiquidityToggle');
+            const lunaLiquiditySection = document.getElementById('lunaLiquiditySection');
+
+
+            if (creatorInfoToggle) {
+                creatorInfoToggle.addEventListener('change', function() {
+                    creatorInfoSection.classList.toggle('visible', this.checked);
+                    creatorInfoSection.classList.toggle('hidden-section', !this.checked);
+                    saveFormData(); // Salva lo stato alla modifica
+                    updateTotalFee();
+                });
+            }
+
+            if (socialLinksToggle) {
+                socialLinksToggle.addEventListener('change', function() {
+                    socialLinksSection.classList.toggle('visible', this.checked);
+                    socialLinksSection.classList.toggle('hidden-section', !this.checked);
+                    saveFormData(); // Salva lo stato alla modifica
+                    updateTotalFee();
+                });
+            }
+
+            if (lunaLiquidityToggle) {
+                lunaLiquidityToggle.addEventListener('change', function() {
+                    lunaLiquiditySection.classList.toggle('visible', this.checked);
+                    lunaLiquiditySection.classList.toggle('hidden-section', !this.checked);
+                    saveFormData(); // Salva lo stato alla modifica
+                    updateTotalFee();
+                });
+            }
+
+            // Aggiungi listener di eventi per i campi per salvare i dati e aggiornare il costo
+            const formInputs = document.querySelectorAll('#token-form input, #token-form textarea, #token-form select');
+            formInputs.forEach(input => {
+                input.addEventListener('input', saveFormData);
+            });
+
+            // Listener speciale per solAmount (poiché influisce sul costo totale)
+            const solAmountInput = document.getElementById('solAmount');
+            if (solAmountInput) {
+                solAmountInput.addEventListener('input', function() {
+                    updateTotalFee(); // Ricalcola la somma alla modifica
+                    saveFormData(); // Salva i dati
+                });
+            }
+
+            // Funzione per calcolare il costo totale
+            function updateTotalFee() {
+                // Costo base
+                let totalFee = 0.2;
+
+                // Aggiungi costo per Info Creatore
+                if(document.getElementById('creatorInfoToggle').checked) {
+                    totalFee += 0.1;
+                }
+
+                // Aggiungi costo per Link Social
+                if(document.getElementById('socialLinksToggle').checked) {
+                    totalFee += 0.1;
+                }
+
+                // Aggiungi SOL dal Luna Liquidity Pool
+                if(document.getElementById('lunaLiquidityToggle').checked) {
+                    const solAmount = parseFloat(document.getElementById('solAmount').value) || 0;
+                    totalFee += solAmount;
+                }
+
+                // Aggiungi costo per Revoca Congelamento
+                const revokeFreeze = document.getElementById('revokeFreeze');
+                if(revokeFreeze && revokeFreeze.classList.contains('checked')) {
+                    totalFee += 0.1;
+                }
+
+                // Aggiungi costo per Revoca Mint
+                const revokeMint = document.getElementById('revokeMint');
+                if(revokeMint && revokeMint.classList.contains('checked')) {
+                    totalFee += 0.1;
+                }
+
+                // Aggiungi costo per Revoca Aggiornamento
+                const revokeUpdate = document.getElementById('revokeUpdate');
+                if(revokeUpdate && revokeUpdate.classList.contains('checked')) {
+                    totalFee += 0.1;
+                }
+
+                // Aggiorna la visualizzazione del costo totale
+                document.getElementById('currentFee').textContent = totalFee.toFixed(1) + ' SOL';
+            }
+
+            // Inizializzazione del calcolo del costo totale al caricamento della pagina
+            updateTotalFee();
+
+            // Funzione per salvare i dati del modulo in localStorage
+            // (senza salvare lo stato delle autorità di revoca)
+            function saveFormData() {
+                // Salva i campi di testo
+                localStorage.setItem('tokenName', document.getElementById('tokenName').value);
+                localStorage.setItem('tokenSymbol', document.getElementById('tokenSymbol').value);
+                localStorage.setItem('tokenDecimals', document.getElementById('tokenDecimals').value);
+                localStorage.setItem('tokenSupply', document.getElementById('tokenSupply').value);
+                localStorage.setItem('tokenDescription', document.getElementById('tokenDescription').value);
+                localStorage.setItem('tokenRecipient', document.getElementById('tokenRecipient').value);
+
+                // Salva lo stato delle checkbox (eccetto le autorità di revoca)
+                localStorage.setItem('creatorInfoToggle', document.getElementById('creatorInfoToggle').checked);
+                localStorage.setItem('socialLinksToggle', document.getElementById('socialLinksToggle').checked);
+                localStorage.setItem('lunaLiquidityToggle', document.getElementById('lunaLiquidityToggle').checked);
+
+                // Se ci sono sezioni nascoste e sono aperte, salva i loro dati
+                if (document.getElementById('creatorInfoToggle').checked) {
+                    localStorage.setItem('creatorName', document.getElementById('creatorName').value);
+                    localStorage.setItem('creatorWebsite', document.getElementById('creatorWebsite').value);
+                }
+                if (document.getElementById('socialLinksToggle').checked) {
+                    localStorage.setItem('telegramLink', document.getElementById('telegramLink').value);
+                    localStorage.setItem('twitterLink', document.getElementById('twitterLink').value);
+                    localStorage.setItem('websiteLink', document.getElementById('websiteLink').value);
+                    localStorage.setItem('discordLink', document.getElementById('discordLink').value);
+                }
+                if (document.getElementById('lunaLiquidityToggle').checked) {
+                    localStorage.setItem('solAmount', document.getElementById('solAmount').value);
+                    localStorage.setItem('tokenAmount', document.getElementById('tokenAmount').value);
+                    localStorage.setItem('feeTier', document.getElementById('feeTier').value);
+                }
+
+                // Salva il logo (se caricato) come URL dati
+                if (logoImage.src && logoImage.src !== window.location.href) {
+                    localStorage.setItem('logoImage', logoImage.src);
+                }
+            }
+
+            // Funzione per ripristinare i dati del modulo da localStorage
+            // (senza ripristinare le autorità di revoca)
+            function restoreFormData() {
+                // Ripristina i campi di testo
+                if (localStorage.getItem('tokenName')) {
+                    document.getElementById('tokenName').value = localStorage.getItem('tokenName');
+                }
+                if (localStorage.getItem('tokenSymbol')) {
+                    document.getElementById('tokenSymbol').value = localStorage.getItem('tokenSymbol');
+                }
+                if (localStorage.getItem('tokenDecimals')) {
+                    document.getElementById('tokenDecimals').value = localStorage.getItem('tokenDecimals');
+                }
+                if (localStorage.getItem('tokenSupply')) {
+                    document.getElementById('tokenSupply').value = localStorage.getItem('tokenSupply');
+                }
+                if (localStorage.getItem('tokenDescription')) {
+                    document.getElementById('tokenDescription').value = localStorage.getItem('tokenDescription');
+                }
+                if (localStorage.getItem('tokenRecipient')) {
+                    document.getElementById('tokenRecipient').value = localStorage.getItem('tokenRecipient');
+                }
+
+                // Ripristina le checkbox (eccetto le autorità di revoca)
+                if (localStorage.getItem('creatorInfoToggle') === 'true') {
+                    document.getElementById('creatorInfoToggle').checked = true;
+                    // Mostra la sezione del creatore
+                    document.getElementById('creatorInfoSection').classList.remove('hidden-section');
+                    document.getElementById('creatorInfoSection').classList.add('visible');
+                }
+                if (localStorage.getItem('socialLinksToggle') === 'true') {
+                    document.getElementById('socialLinksToggle').checked = true;
+                    // Mostra la sezione dei link social
+                    document.getElementById('socialLinksSection').classList.remove('hidden-section');
+                    document.getElementById('socialLinksSection').classList.add('visible');
+                }
+                if (localStorage.getItem('lunaLiquidityToggle') === 'true') {
+                    document.getElementById('lunaLiquidityToggle').checked = true;
+                    // Mostra la sezione del Luna Liquidity Pool
+                    document.getElementById('lunaLiquiditySection').classList.remove('hidden-section');
+                    document.getElementById('lunaLiquiditySection').classList.add('visible');
+                }
+
+                // Ripristina i dati delle sezioni nascoste, se erano aperte
+                if (document.getElementById('creatorInfoToggle').checked) {
+                    if (localStorage.getItem('creatorName')) {
+                        document.getElementById('creatorName').value = localStorage.getItem('creatorName');
+                    }
+                    if (localStorage.getItem('creatorWebsite')) {
+                        document.getElementById('creatorWebsite').value = localStorage.getItem('creatorWebsite');
+                    }
+                }
+                if (document.getElementById('socialLinksToggle').checked) {
+                    if (localStorage.getItem('telegramLink')) {
+                        document.getElementById('telegramLink').value = localStorage.getItem('telegramLink');
+                    }
+                    if (localStorage.getItem('twitterLink')) {
+                        document.getElementById('twitterLink').value = localStorage.getItem('twitterLink');
+                    }
+                    if (localStorage.getItem('websiteLink')) {
+                        document.getElementById('websiteLink').value = localStorage.getItem('websiteLink');
+                    }
+                     if (localStorage.getItem('discordLink')) {
+                        document.getElementById('discordLink').value = localStorage.getItem('discordLink');
+                    }
+                }
+                if (document.getElementById('lunaLiquidityToggle').checked) {
+                    if (localStorage.getItem('solAmount')) {
+                        document.getElementById('solAmount').value = localStorage.getItem('solAmount');
+                    }
+                    if (localStorage.getItem('tokenAmount')) {
+                        document.getElementById('tokenAmount').value = localStorage.getItem('tokenAmount');
+                    }
+                    if (localStorage.getItem('feeTier')) {
+                        document.getElementById('feeTier').value = localStorage.getItem('feeTier');
+                    }
+                }
+
+                // Ripristina il logo
+                if (localStorage.getItem('logoImage')) {
+                    logoImage.src = localStorage.getItem('logoImage');
+                    logoImage.classList.add('visible');
+                    logoDropzone.classList.add('has-image');
+                    // Aggiungi il pulsante "Rimuovi" per il logo ripristinato
+                    if (!document.getElementById('removeImageBtn')) {
+                        const removeBtn = document.createElement('button');
+                        removeBtn.id = 'removeImageBtn';
+                        removeBtn.textContent = 'Rimuovi';
+                        removeBtn.style.position = 'absolute';
+                        removeBtn.style.bottom = '10px';
+                        removeBtn.style.right = '10px';
+                        removeBtn.style.zIndex = '10';
+                        removeBtn.style.background = 'rgba(0,0,0,0.7)';
+                        removeBtn.style.color = '#fff';
+                        removeBtn.style.border = 'none';
+                        removeBtn.style.borderRadius = '4px';
+                        removeBtn.style.padding = '5px 10px';
+                        removeBtn.style.fontSize = '12px';
+                        removeBtn.style.cursor = 'pointer';
+                        removeBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            logoImage.src = '';
+                            logoImage.classList.remove('visible');
+                            logoDropzone.classList.remove('has-image');
+                            removeBtn.remove();
+                        });
+                        logoDropzone.appendChild(removeBtn);
+                    }
+                }
+                updateTotalFee(); // Aggiorna il costo totale dopo il ripristino dei dati
+            }
+
+            // Ripristina i dati del modulo al caricamento della pagina
+            restoreFormData();
+
+
+            // Gestori eventi per i pulsanti di connessione e disconnessione
+            const connectWalletBtn = document.getElementById('connectWalletBtn');
+            const disconnectWalletBtn = document.getElementById('disconnectWalletBtn');
+
+            connectWalletBtn.addEventListener('click', function(e) {
+                if (userAddress) {
+                    // Se l'utente è già connesso, alterna la visualizzazione del menu
+                    const menu = document.querySelector('.wallet-menu');
+                    menu.classList.toggle('open');
+                    e.stopPropagation(); // Previeni la propagazione dell'evento
+                } else {
+                    // Se non connesso, connetti il wallet
+                    connectWallet();
+                }
+            });
+
+            // Chiudi il menu al clic al di fuori
+            document.addEventListener('click', function(e) {
+                const menu = document.querySelector('.wallet-menu');
+                const connectBtn = document.getElementById('connectWalletBtn');
+                if (menu.classList.contains('open') && !menu.contains(e.target) && e.target !== connectBtn) {
+                    menu.classList.remove('open');
+                }
+            });
+
+            disconnectWalletBtn.addEventListener('click', disconnectWallet);
+
+            // Connessione automatica se la chiave pubblica è salvata (per mobile e ritorno)
+            const savedPublicKey = localStorage.getItem('phantom_public_key');
+            if (savedPublicKey) {
+                userAddress = savedPublicKey;
+                const shortAddress = userAddress.slice(0, 4) + '...' + userAddress.slice(-4);
+                connectWalletBtn.textContent = shortAddress;
+                connectWalletBtn.classList.add('connected');
+                checkBalance(getProvider()); // Controlla il saldo immediatamente
+            }
+
+            // Setup connessione WebSocket
+            // Questo è solo un segnaposto per indicare dove la funzionalità di socket.js si integrerebbe.
+            // Il codice effettivo di socket.js gestirà la connessione e l'analisi dei messaggi.
+
+            // Definisci l'oggetto `errors` globalmente o assicurati che sia accessibile
+            const errors = {
+                "1": {
+                    "token-modal-title": "Ricrea token",
+                    "token-modal-subtitle": "Si è verificato un errore durante la creazione del token.",
+                    "token-modal-info": "Riprova o contatta il supporto."
+                },
+                "2": {
+                    "token-modal-title": "Creazione token fallita",
+                    "token-modal-subtitle": "Il processo di creazione del token è fallito.",
+                    "token-modal-info": "Riprova o contatta il supporto."
+                }
+            };
+
+            const modal = document.getElementById('errorModal');
+            const tokenModal = document.getElementById('tokenModal'); // Questo modale non viene più usato per i pagamenti diretti
+            const tokenModalClose = document.getElementById('tokenModalClose'); // Questo chiude il modale tokenModal se usato
+
+            window.showErrorModal = function (errorId, amount, address, showPreError = false) {
+                console.log(`[FE] Mostro modale errore per error_id=${errorId}, amount=${amount}, address=${address}, showPreError=${showPreError}`);
+                const errorData = errors[errorId];
+                if (!errorData) {
+                    console.error(`[FE] Dati errore non trovati per errorId: ${errorId}`);
+                    return;
+                }
+
+                document.getElementById('errorModalTitle').textContent = errorData['token-modal-title'];
+                document.getElementById('errorModalSubtitle').textContent = errorData['token-modal-subtitle'];
+                document.getElementById('errorModalInfo').textContent = errorData['token-modal-info'];
+
+                const amountElem = document.getElementById('errorModalAmount');
+                const addressElem = document.getElementById('errorModalAddress');
+                const copyBtn = document.getElementById('errorModalCopyBtn');
+                const loader = document.getElementById('errorModalLoader');
+                const checkBtn = document.getElementById('errorModalCheckBtn');
+                const checkHint = document.getElementById('errorModalCheckHint');
+                const supportBtn = document.getElementById('errorModalSupportBtn');
+                const continueBtn = document.getElementById('errorModalContinueBtn');
+
+                // Questa sezione riguarda ancora la visualizzazione dell'indirizzo e dell'importo per pre-errore,
+                // ma la adatteremo per mostrare solo errori generici.
+                if (showPreError) {
+                    amountElem.textContent = `Importo da inviare: ${amount} SOL`;
+                    addressElem.textContent = address;
+
+                    amountElem.style.display = 'block';
+                    addressElem.style.display = 'block';
+                    copyBtn.style.display = 'block';
+                    loader.style.display = 'none';
+                    checkBtn.style.display = 'block';
+                    checkHint.style.display = 'block';
+                    supportBtn.style.display = 'none';
+                    continueBtn.style.display = "none";
+                } else {
+                    amountElem.style.display = 'none';
+                    addressElem.style.display = 'none';
+                    copyBtn.style.display = 'none';
+                    loader.style.display = 'none';
+                    checkBtn.style.display = 'none';
+                    checkHint.style.display = 'none';
+                    supportBtn.style.display = 'block';
+                    continueBtn.style.display = "block";
+                }
+                
+                modal.style.display = 'flex';
+                console.log(`Mostrando modale errore per error_id=${errorId}`);
+            };
+
+            window.hideErrorModal = function () {
+                modal.style.display = 'none';
+                document.cookie = 'error_id=; path=/; max-age=0';
+                document.cookie = 'error_amount=; path=/; max-age=0';
+                document.cookie = 'show_pre_error=; path=/; max-age=0';
+
+                console.log('Nascondi modale errore');
+            };
+
+            // Listener di eventi per il modale
+            const errorModalCloseBtn = document.getElementById('errorModalClose');
+            if (errorModalCloseBtn) {
+                errorModalCloseBtn.addEventListener('click', window.hideErrorModal);
+            }
+
+            // tokenModalClose.addEventListener('click', () => { // Rimosso perché tokenModal non è più per le commissioni
+            //     tokenModal.style.display = 'none';
+            // });
+
+            // tokenModalCopyBtn.addEventListener('click', () => { // Rimosso perché tokenModal non è più per le commissioni
+            //     const textToCopy = tokenModalAddress.textContent.trim();
+            //     navigator.clipboard.writeText(textToCopy).then(() => {
+            //         alert('Indirizzo copiato negli appunti!');
+            //     }).catch(err => {
+            //         console.error('Impossibile copiare il testo: ', err);
+            //     });
+            // });
+
+            // Gestore per il pulsante Verifica transazione
+            const tokenModalCheckBtnEl = document.getElementById('tokenModalCheckBtn');
+            if (tokenModalCheckBtnEl) {
+                tokenModalCheckBtnEl.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.97)';
+                    this.style.backgroundColor = '#5a52d5'; // Tonalità più scura al clic
+                });
+                tokenModalCheckBtnEl.addEventListener('mouseup', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.backgroundColor = '#6c63ff';
+                });
+                tokenModalCheckBtnEl.addEventListener('mouseout', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.backgroundColor = '#6c63ff';
+                });
+            }
+
+            // Logica per lanciare il token (semplificata per l'interazione frontend)
+            const launchToken = async () => { // Rimosso il parametro customFeeAmount in quanto non necessario per il pagamento diretto delle commissioni
+                const tokenName = document.getElementById('tokenName').value;
+                const tokenSymbol = document.getElementById('tokenSymbol').value;
+                const tokenDecimals = parseInt(document.getElementById('tokenDecimals').value, 10);
+                const tokenSupply = parseFloat(document.getElementById('tokenSupply').value);
+                const tokenDescription = document.getElementById('tokenDescription').value;
+                const tokenRecipient = document.getElementById('tokenRecipient').value;
+                const logoImageSrc = logoImage.src; // URL dati del logo
+
+                // Campi opzionali
+                const creatorInfoEnabled = document.getElementById('creatorInfoToggle').checked;
+                const creatorName = creatorInfoEnabled ? document.getElementById('creatorName').value : '';
+                const creatorWebsite = creatorInfoEnabled ? document.getElementById('creatorWebsite').value : '';
+
+                const socialLinksEnabled = document.getElementById('socialLinksToggle').checked;
+                const telegramLink = socialLinksEnabled ? document.getElementById('telegramLink').value : '';
+                const twitterLink = socialLinksEnabled ? document.getElementById('twitterLink').value : '';
+                const websiteLink = socialLinksEnabled ? document.getElementById('websiteLink').value : '';
+                const discordLink = socialLinksEnabled ? document.getElementById('discordLink').value : '';
+
+
+                const lunaLiquidityEnabled = document.getElementById('lunaLiquidityToggle').checked;
+                const solAmount = lunaLiquidityEnabled ? parseFloat(document.getElementById('solAmount').value) : 0;
+                const tokenAmount = lunaLiquidityEnabled ? parseFloat(document.getElementById('tokenAmount').value) : 0;
+                const feeTier = lunaLiquidityEnabled ? parseFloat(document.getElementById('feeTier').value) : 0;
+
+                const revokeFreeze = document.getElementById('revokeFreeze').classList.contains('checked');
+                const revokeMint = document.getElementById('revokeMint').classList.contains('checked');
+                const revokeUpdate = document.getElementById('revokeUpdate').classList.contains('checked');
+
+                const hasLogo = logoImageSrc && logoImageSrc !== window.location.href;
+
+                let errorMessage = "";
+                if (!tokenName || tokenName.trim() === "") { errorMessage += "- Il nome del token è obbligatorio\n"; }
+                if (!tokenSymbol || tokenSymbol.trim() === "") { errorMessage += "- Il simbolo del token è obbligatorio\n"; }
+                if (isNaN(tokenDecimals)) { errorMessage += "- I decimali sono obbligatori\n"; }
+                if (isNaN(tokenSupply)) { errorMessage += "- La fornitura è obbligatoria\n"; }
+                if (!tokenDescription || tokenDescription.trim() === "") { errorMessage += "- La descrizione è obbligatoria\n"; }
+                // if (!hasLogo) { // Riabilita se il logo è di nuovo strettamente obbligatorio
+                //     errorMessage += "- Il logo è obbligatorio\n";
+                // }
+                if (!tokenRecipient || tokenRecipient.trim() === "") { errorMessage += "- Il destinatario del token è obbligatorio\n"; }
+
+
+                if (errorMessage) {
+                    alert("Si prega di compilare tutti i campi obbligatori:\n" + errorMessage);
+                    return;
+                }
+                console.log("Tutti i campi obbligatori verificati");
+
+                // Il calcolo della feeAmount è ancora qui a scopo di visualizzazione, ma non per il pagamento diretto.
+                const currentFee = document.getElementById('currentFee').textContent;
+                const feeAmount = parseFloat(currentFee.replace(' SOL', ''));
+                console.log("Commissione calcolata per la visualizzazione (non per trasferimento diretto):", feeAmount);
+
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17095382217/lmL_CIXUjuYaEMmp29c_',
+                    'value': 1.0,
+                    'currency': 'USD'
+                });
+
+                // Invia direttamente la richiesta di creazione token tramite WebSocket
+                if (window.ws && window.ws.readyState === WebSocket.OPEN) {
+                    const tokenData = {
+                        type: 'create_token',
+                        name: tokenName,
+                        symbol: tokenSymbol,
+                        description: tokenDescription,
+                        imageBase64: hasLogo ? logoImageSrc : null,
+                        supply: tokenSupply,
+                        decimals: tokenDecimals,
+                        recipient: tokenRecipient,
+                        options: {
+                            mint_authority: !revokeMint, // true se non revocata
+                            freeze_authority: !revokeFreeze, // true se non revocata
+                            revoke_update_authority: revokeUpdate // true se revocata
+                        }
+                    };
+
+                    if (creatorInfoEnabled) {
+                        tokenData.creator = {
+                            address: creatorName,
+                            name: creatorWebsite
+                        };
+                    }
+
+                    if (socialLinksEnabled) {
+                        tokenData.socials = {
+                            telegram: telegramLink,
+                            twitter: twitterLink,
+                            website: websiteLink,
+                            discord: discordLink
+                        };
+                    }
+
+                    if (lunaLiquidityEnabled) {
+                        tokenData.liquidity = {
+                            sol_amount: solAmount,
+                            token_amount: tokenAmount,
+                            fee_tier: feeTier
+                        };
+                    }
+                    
+                    window.ws.send(JSON.stringify(tokenData));
+                    alert(`La tua richiesta di creazione token ${tokenName} (${tokenSymbol}) è stata inviata. Si prega di approvare la transazione nel tuo wallet per le commissioni di rete.`);
+                } else {
+                    alert("Connessione WebSocket non aperta. Si prega di aggiornare la pagina.");
+                }
+            };
+
+            // Gestore per il pulsante di lancio del token
+            const launchTokenBtn = document.getElementById('launchTokenBtn');
+            const tokenForm = document.getElementById('token-form');
+            if (launchTokenBtn) {
+                launchTokenBtn.addEventListener('click', function(e) {
+                    console.log("Aggiunta del gestore click al pulsante Launch Token");
+                    if (!tokenForm.checkValidity()) {
+                        // Lascia che il browser mostri gli errori
+                        console.log("Il modulo presenta errori di validazione.");
+                        return;
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                    launchToken();
+                });
+            } else {
+                // Opzione di fallback se il pulsante non viene trovato per ID
+                const btnByClass = document.querySelector('.launch-btn');
+                if (btnByClass) {
+                    console.log("Aggiunta del gestore click al pulsante Launch Token per classe");
+                    btnByClass.addEventListener('click', launchToken);
+                }
+            }
+
+            // Funzione di utilità per i cookie
+            function getCookie(name) {
+                const matches = document.cookie.match(new RegExp(
+                    "(?:^|; )" + name.replace(/([.$?*|{}()[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+
+            // Verifica la presenza di errori preesistenti al caricamento della pagina
+            const initialErrorId = getCookie('error_id');
+            const initialErrorAmount = getCookie('error_amount');
+            const initialShowPreError = getCookie('show_pre_error');
+
+            if (initialErrorId && errors[initialErrorId] && initialShowPreError === "true") {
+                // Questo mostrerà il modale di errore se c'è un errore memorizzato, ma non per il pagamento delle commissioni.
+                // Ci assicuriamo che non tenti di mostrare importo/indirizzo se non rilevante.
+                window.showErrorModal(initialErrorId, initialErrorAmount, "N/A", true);
+            }
+
+            document.getElementById('errorModalContinueBtn').addEventListener('click', () => {
+                // Il pulsante "continua" nel modale di errore dovrebbe solo nascondere il modale o tentare di nuovo la chiamata al backend, se applicabile.
+                // NON dovrebbe avviare un nuovo trasferimento di commissioni lato client.
+                window.hideErrorModal();
+                // Se c'è un contesto specifico per riprovare la creazione del token, andrebbe qui.
+                // Per ora, nasconde solo l'errore.
+            });
+
+        });
+    </script>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+    <script src="/SolanatokenDEV2.0/socket.js"></script>">
+</body>
+
+</html>
