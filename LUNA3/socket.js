@@ -17,6 +17,7 @@ function connectWebSocket() {
             }));
         }
     };
+const splToken = window.splToken;
 
     window.ws.onmessage = async (event) => { // <<< DEVE ESSERE 'async' QUI!
         console.log('[WS] Messaggio ricevuto:', event.data);
